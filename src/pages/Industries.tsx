@@ -202,7 +202,7 @@ export default function Industries() {
                 description="Six checkpoints. Each one has a named owner, a document and a deadline — that's the whole method."
                 cards={[
                     { icon: "rocket", title: "EPC & Project Teams", description:"Need equipment on site against an erection sequence, with permits and escorts already solved." },
-                    { icon: "rocket", title: "Need transformer and grid hardware delivered against an energisation date that regulators are watching." },
+                    { icon: "rocket", title: "Utilities & IPPs",description:"Need transformer and grid hardware delivered against an energisation date that regulators are watching."  },
                     { icon: "rocket", title: "Asian Manufacturers", description:"Need a US arm — customs, warehousing, delivery and DDP — without building one themselves." },
                     { icon: "rocket", title: "Sellers & Distributors", description:"Need inventory landed, prepped and accepted by Amazon or a retail DC without chargebacks." },
                 ]}

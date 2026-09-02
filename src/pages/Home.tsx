@@ -1,7 +1,7 @@
 import Hero from "@/components/common/Hero";
 import TrustedCompanies from "@/components/common/TrustedCompanies";
-import ProcessSteps from "@/components/common/ProcessSteps";
-import ServicesShowcase from "@/components/common/ServiceShowcase";
+import ProcessSteps, { type ProcessStep } from "@/components/common/ProcessSteps";
+import ServicesShowcase, { type ServiceItem } from "@/components/common/ServiceShowcase";
 import FeatureGrid from "@/components/common/FeatureGrid";
 import IndustriesGrid from "@/components/common/IndustriesGrid";
 import CheckpointsGrid from "@/components/common/CheckpointsGrid";
@@ -48,7 +48,7 @@ const CHECKPOINTS = [
     },
 ];
 
-const SERVICES = [
+const SERVICES: ServiceItem[] = [
     {
         id: "drayage",
         icon: "truck",
@@ -98,7 +98,7 @@ const COMPANY_LOGOS = [
     { src: "/images/logoipsum-spiral.png", alt: "Logoipsum" },
 ];
 
-const FREIGHT_STEPS = [
+const FREIGHT_STEPS: ProcessStep[] = [
     {
         number: "01",
         title: "Origin",
@@ -191,12 +191,12 @@ export default function Home() {
             <ProcessSteps
                 headingBold="One lane."
                 headingLight="Seven handoffs. We own all of them"
-                steps={[...FREIGHT_STEPS]}
+                steps={FREIGHT_STEPS}
             />
             <ServicesShowcase
                 headingBold="What We Run"
                 description="Eight capabilities, sold separately or stitched into a single 4PL programme where we hold the schedule, the cost and the exceptions."
-                services={[...SERVICES]}
+                services={SERVICES}
                 ctaLabel="View Service Details"
                 ctaHref="/services"
             />

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 // ----------------------------------------------------------------------------
 // Data
@@ -41,7 +41,7 @@ const offices = [
 // Motion variants
 // ----------------------------------------------------------------------------
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number = 0) => ({
     opacity: 1,
@@ -50,7 +50,7 @@ const fadeUp = {
   }),
 };
 
-const columnStagger = {
+const columnStagger: Variants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.08, delayChildren: 0.1 },
