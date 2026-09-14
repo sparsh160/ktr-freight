@@ -135,8 +135,8 @@ export default function Footer() {
               custom={0}
               className="text-[32px] font-medium leading-[1.15] tracking-tight sm:text-[40px] lg:text-[44px]"
             >
-              Looking to expand your long-term
-              <br className="hidden sm:block" /> rental business?
+              Send us the lane. We'll send back 
+              <br className="hidden sm:block" /> the landed number.
             </motion.h2>
 
             <motion.div variants={fadeUp} custom={1} className="mt-10">
@@ -213,8 +213,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 text-[15px] leading-relaxed text-white/85">
-              Expert Construction Services for Residential, Commercial, and
-              Industrial Projects.
+              Asia–US 4PL: drayage, OTR, customs, DDP and company-operated US warehousing on one contract.
             </p>
 
             <div className="mt-8 flex items-center gap-5">

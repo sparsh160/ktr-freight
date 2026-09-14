@@ -54,7 +54,7 @@ const SERVICES: ServiceItem[] = [
         icon: "truck",
         title: "Drayage",
         shortDescription:
-            "Generate platform-ready images and short video concepts for launches, ads, reels, and daily content.",
+            "Port and rail-ramp pulls at LA/LGB, NY/NJ, Savannah, Houston, Norfolk, SEA/TAC and Chicago — run against free time, with chassis, demurrage and per diem controlled daily.",
         image: "/images/services-truck-bg.png",
         cardImage: "/images/service-card.webp",
     },
