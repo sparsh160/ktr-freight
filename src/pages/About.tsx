@@ -48,20 +48,20 @@ export default function Contact() {
                     "We are deliberately narrow. Energy infrastructure — transformers, beams, coils, insulators, solar modules, semiconductors and data centre equipment — is where a decade of lane knowledge compounds.",
                 ]}
                 stats={[
-                    { value: "3", label: "Client Satisfaction" },
-                    { value: "24/7", label: "Years of Experience" },
-                    { value: "10 yrs+", label: "Completed Projects" },
-                    { value: "2013", label: "Government Projects" },
+                    { value: "3", label: "Company-operated US warehouses — NJ, Chicago, LA" },
+                    { value: "24/7", label: "India-hours desks covering the US night shift" },
+                    { value: "10 yrs+", label: "Per-person experience in US drayage, OTR and customs" },
+                    { value: "2013", label: "Team operating Asia–US lanes · KTR Freight Pvt Ltd est. 2022" },
                 ]}
             />
             <CoverageMap
                 heading="How we work"
-                description="Six checkpoints. Each one has a named owner, a document and a deadline — that's the whole method."
+                description="Every shipment runs through six checkpoints — origin control, lane build, transit watch, clearance, gateway to floor, delivered. Each checkpoint has a named owner, a document and a deadline. That is the whole method, and it is why our cost files close instead of drifting."
                 columns={3}
                 items={[
-                    { title: "One contract", locations: LOCATIONS, tagline: TAGLINE },
-                    { title: "One number", locations: LOCATIONS, tagline: TAGLINE },
-                    { title: "One accountable team", locations: LOCATIONS, tagline: TAGLINE },
+                    { title: "One contract", locations: "Ten capabilities sold separately or stitched into a single 4PL programme. Where you have incumbent forwarders you want to keep, we manage them rather than replace them.",},
+                    { title: "One number", locations: "The whole chain — including duty — priced as one landed figure before you commit. Section 301 and ADD/CVD modelled up front.",  },
+                    { title: "One accountable team", locations: "When something breaks there is no hand-off argument between three vendors. Milestone visibility, weekly exception review, photo POD.",  },
                 ]}
             />
  

@@ -3,7 +3,7 @@ import ServiceDetailBlock from "@/components/common/ServiceDetailBlock";
 import HeroSection from "@/components/common/HeroSection";
 import CommodityCardGrid from "@/components/common/CommodityCardGrid";
 import AudienceCardGrid from "@/components/common/AudienceCardGrid";
-import { Rocket } from "lucide-react";
+import { Folder, Briefcase, Factory, Handshake } from "lucide-react";
 
 const SERVICES = [
     {
@@ -201,10 +201,10 @@ export default function Industries() {
                 headingBold="Who we usually report to"
                 description="Six checkpoints. Each one has a named owner, a document and a deadline — that's the whole method."
                 cards={[
-                    { icon: "rocket", title: "EPC & Project Teams", description:"Need equipment on site against an erection sequence, with permits and escorts already solved." },
-                    { icon: "rocket", title: "Utilities & IPPs",description:"Need transformer and grid hardware delivered against an energisation date that regulators are watching."  },
-                    { icon: "rocket", title: "Asian Manufacturers", description:"Need a US arm — customs, warehousing, delivery and DDP — without building one themselves." },
-                    { icon: "rocket", title: "Sellers & Distributors", description:"Need inventory landed, prepped and accepted by Amazon or a retail DC without chargebacks." },
+                    { icon: "folder", title: "EPC & Project Teams", description:"Need equipment on site against an erection sequence, with permits and escorts already solved." },
+                    { icon: "briefcase", title: "Utilities & IPPs",description:"Need transformer and grid hardware delivered against an energisation date that regulators are watching."  },
+                    { icon: "factory", title: "Asian Manufacturers", description:"Need a US arm — customs, warehousing, delivery and DDP — without building one themselves." },
+                    { icon: "handshake", title: "Sellers & Distributors", description:"Need inventory landed, prepped and accepted by Amazon or a retail DC without chargebacks." },
                 ]}
             />
             <HeroSection

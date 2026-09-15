@@ -7,13 +7,13 @@ export interface CoverageItem {
     title: string;
     /** e.g. "LAX / LGB, NY / NJ, Savannah, Houston, Norfolk, Seattle–Tacoma, Charleston, Oakland" */
     locations: string;
-    /** e.g. "Drayage, transload and free-time management" */
-    tagline: string;
+    /** e.g. "Drayage, transload and free-time management". Optional — omit for single-line cell copy. */
+    tagline?: string;
 }
 
 export interface CoverageMapProps {
     heading: string;
-    description: string;
+    description?: string;
     items: CoverageItem[];
     /** Columns at the widest breakpoint. Default 4. */
     columns?: 2 | 3 | 4;
@@ -54,7 +54,7 @@ const CoverageMap: React.FC<CoverageMapProps> = ({
                 }
             `}</style>
 
-            <div className="max-w-[1340px] mx-auto px-5 sm:px-6 md:px-10 lg:px-14">
+            <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-14">
                 {/* Heading row */}
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10 md:mb-14">
                     <motion.h2
@@ -67,15 +67,17 @@ const CoverageMap: React.FC<CoverageMapProps> = ({
                         {heading}
                     </motion.h2>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-[15px] sm:text-[16px] text-gray-600 leading-relaxed max-w-xl lg:text-left"
-                    >
-                        {description}
-                    </motion.p>
+                    {description && (
+                        <motion.p
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="text-[15px] sm:text-[16px] text-gray-600 leading-relaxed max-w-xl lg:text-right"
+                        >
+                            {description}
+                        </motion.p>
+                    )}
                 </div>
 
                 {/* Bordered grid */}
@@ -92,15 +94,17 @@ const CoverageMap: React.FC<CoverageMapProps> = ({
                             variants={cellVariants}
                             className="border-r border-b border-gray-300 p-6 sm:p-7"
                         >
-                            <h3 className="text-[18px] sm:text-[19px]  text-gray-900 mb-4">
+                            <h3 className="text-[18px] sm:text-[19px] font-bold text-gray-900 mb-4">
                                 {item.title}
                             </h3>
-                            <p className="text-[13.5px] sm:text-[14.5px] text-gray-500 leading-relaxed mb-3">
+                            <p className={`text-[13.5px] sm:text-[14.5px] text-gray-500 leading-relaxed ${item.tagline ? "mb-3" : ""}`}>
                                 {item.locations}
                             </p>
-                            <p className="text-[13.5px] sm:text-[14.5px] text-gray-500 leading-relaxed">
-                                {item.tagline}
-                            </p>
+                            {item.tagline && (
+                                <p className="text-[13.5px] sm:text-[14.5px] text-gray-500 leading-relaxed">
+                                    {item.tagline}
+                                </p>
+                            )}
                         </motion.div>
                     ))}
                 </motion.div>

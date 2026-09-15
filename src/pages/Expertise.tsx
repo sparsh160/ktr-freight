@@ -82,7 +82,7 @@ export default function Expertise() {
                         title: "FMCSA-literate carrier control",
                         description:
                             "Operating authority, MC status, insurance certificates, cargo limits, safety and inspection history and signed agreements are checked before dispatch. Vetting is a gate, not an investigation you run after a claim.",
-                        image: "/images/design-build.png",
+                        image: "/images/expertise-1.png",
                         imageAlt: "Two workers overlooking a construction site from a glass tower",
                         href: "/services/design-build",
                     },
@@ -91,7 +91,7 @@ export default function Expertise() {
                         title: "Customs depth",
                         description:
                             "Classification, valuation, origin, ISF timing, bonds and PGA requirements handled with the entry in mind from day one — including the tariff exposure that decides whether a purchase order still makes sense.",
-                        image: "/images/structural-engineering.png",
+                        image: "/images/expertise-2.png",
                         imageAlt: "Engineer reviewing plans at a large drafting table in a workshop",
                         href: "/services/structural-engineering",
                     },
@@ -100,7 +100,7 @@ export default function Expertise() {
                         title: "DDP that survives audit",
                         description:
                             "Importer-of-record structure, duty settlement and document retention arranged so the delivered price holds and the compliance file stands up later.",
-                        image: "/images/foundation-construction.png",
+                        image: "/images/expertise-3.png",
                         imageAlt: "Two workers examining materials on a lab countertop",
                         href: "/services/foundation-construction",
                     },
@@ -109,7 +109,7 @@ export default function Expertise() {
                         title: "Permit & escort planning",
                         description:
                             "Route surveys, state and municipal permits, curfews, pilot cars and police escorts, bridge and overhead clearance, utility coordination — sequenced against lead times that are often longer than the ocean leg.",
-                        image: "/images/design-build.png",
+                        image: "/images/expertise-4.png",
                         imageAlt: "Two workers overlooking a construction site from a glass tower",
                         href: "/services/design-build",
                     },
@@ -118,7 +118,7 @@ export default function Expertise() {
                         title: "Free-time economics",
                         description:
                             "Demurrage, detention, per diem, chassis and storage tracked daily per container. Most expensive lanes are cheap lanes with uncontrolled accessorials.",
-                        image: "/images/structural-engineering.png",
+                        image: "/images/expertise-5.png",
                         imageAlt: "Engineer reviewing plans at a large drafting table in a workshop",
                         href: "/services/structural-engineering",
                     },
@@ -127,7 +127,7 @@ export default function Expertise() {
                         title: "Amazon compliance",
                         description:
                             "Labelling, shipment plans, ISA appointments, FC and IXD routing, prep at our own floors, and reconciliation when receiving counts don't match.",
-                        image: "/images/foundation-construction.png",
+                        image: "/images/expertise-6.png",
                         imageAlt: "Two workers examining materials on a lab countertop",
                         href: "/services/foundation-construction",
                     },
@@ -136,7 +136,7 @@ export default function Expertise() {
                         title: "Own warehouse leverage",
                         description:
                             "NJ, Chicago and LA floors we operate, so pulls, prep, staging and storage happen on our schedule instead of an agent's calendar.",
-                        image: "/images/design-build.png",
+                        image: "/images/expertise-7.png",
                         imageAlt: "Two workers overlooking a construction site from a glass tower",
                         href: "/services/design-build",
                     },
@@ -145,7 +145,7 @@ export default function Expertise() {
                         title: "24/7 exception desk",
                         description:
                             "India-time coverage of the US night. Roll-overs, rejected appointments and customs queries are worked overnight and closed before the US morning.",
-                        image: "/images/structural-engineering.png",
+                        image: "/images/expertise-8.png",
                         imageAlt: "Engineer reviewing plans at a large drafting table in a workshop",
                         href: "/services/structural-engineering",
                     },
@@ -154,7 +154,7 @@ export default function Expertise() {
                         title: "Energy-cargo fluency",
                         description:
                             "Crating standards, impact recorders, coil securement, module handling and commissioning documentation — the details that separate a delivered transformer from a warranty dispute.",
-                        image: "/images/foundation-construction.png",
+                        image: "/images/expertise-9.png",
                         imageAlt: "Two workers examining materials on a lab countertop",
                         href: "/services/foundation-construction",
                     },
@@ -170,12 +170,12 @@ export default function Expertise() {
                 headingBold="Who you're actually hiring"
                 description="KTR Freight is run by operators with more than a decade in US-facing logistics — people who have sat on the drayage desk at 2am, argued a classification, and stood at a site gate waiting on an escort."
                 cards={[
-                    { icon: "rocket", title: "US operations", description:"Drayage, OTR, warehousing and final mile, staffed against US business hours and terminal cut-offs." },
-                    { icon: "rocket", title: "Compliance & customs", description:"Entry preparation, classification support, DDP settlement and document control with licensed brokerage partners." },
-                    { icon: "rocket", title: "Project engineering", description:"Route surveys, transport plans, lifting and securement methodology for cargo that needs an engineer, not a rate." },
-                    { icon: "rocket", title: "Origin control — Asia", description:"Supplier follow-up, inspection, consolidation and export documentation across Indian and East Asian origins." },
-                    { icon: "rocket", title: "Night desk", description:"Gurugram and Mumbai shifts covering the US overnight window, with a written handover every shift." },
-                    { icon: "rocket", title: "Client reporting", description:"Milestone visibility, exception logs, weekly reviews and a cost file that reconciles to the quote." },
+                    { icon: "truck", title: "US operations", description:"Drayage, OTR, warehousing and final mile, staffed against US business hours and terminal cut-offs." },
+                    { icon: "shield", title: "Compliance & customs", description:"Entry preparation, classification support, DDP settlement and document control with licensed brokerage partners." },
+                    { icon: "building", title: "Project engineering", description:"Route surveys, transport plans, lifting and securement methodology for cargo that needs an engineer, not a rate." },
+                    { icon: "globe", title: "Origin control — Asia", description:"Supplier follow-up, inspection, consolidation and export documentation across Indian and East Asian origins." },
+                    { icon: "clock", title: "Night desk", description:"Gurugram and Mumbai shifts covering the US overnight window, with a written handover every shift." },
+                    { icon: "users", title: "Client reporting", description:"Milestone visibility, exception logs, weekly reviews and a cost file that reconciles to the quote." },
 
                 ]}
             />

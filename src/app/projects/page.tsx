@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import Network from "@/pages/Network";
+import Projects from "@/pages/Projects";
 
 export const metadata: Metadata = {
-    title: "Network | US Warehouses: New Jersey, Chicago & Los Angeles ",
+    title: "Projects | US Warehouses: New Jersey, Chicago & Los Angeles ",
     description:
         "Company-operated warehouses in NJ, Chicago and LA plus offices in Gurugram and Mumbai — deconsolidation, cross-dock, FBA prep and staged release to site.",
 };
 
 export default function Page() {
-    return <Network />;
+    return <Projects />;
 }

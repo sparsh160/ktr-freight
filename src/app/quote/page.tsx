@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import Contact from "@/pages/Contact";
+
+import Quote from "@/pages/Quote";
 
 export const metadata: Metadata = {
-    title: "Contact | Get a Lane Quote — Asia to US Freight ",
+    title: "Quote | Get a Lane Quote — Asia to US Freight ",
     description:
         "Send origin, commodity, dimensions, weight and delivery date. KTR returns a routing and one delivered, duty-paid number. 24/7 desk: info@ktrfreight.com.",
 };
 
 export default function Page() {
-    return <Contact />;
+    return <Quote />;
 }

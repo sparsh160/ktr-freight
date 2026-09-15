@@ -14,6 +14,8 @@ import {
     ClipboardCheck,
     FileText,
     Handshake,
+    Folder,      
+    Briefcase,
     type LucideIcon,
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
@@ -41,6 +43,8 @@ export const audienceCardIcons = {
     checklist: ClipboardCheck,
     document: FileText,
     handshake: Handshake,
+    folder: Folder,       
+    briefcase: Briefcase,
 } satisfies Record<string, LucideIcon>;
 
 export type AudienceCardIconName = keyof typeof audienceCardIcons;

@@ -119,11 +119,11 @@ function InstagramIcon() {
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#3247F5] text-white">
-      <div className="mx-auto max-w-[1240px] px-6 pt-20 pb-14 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1240px] px-6 pt-14 pb-10 sm:px-10 sm:pt-20 sm:pb-14 lg:px-16">
         {/* ---------------------------------------------------------------- */}
         {/* CTA row                                                         */}
         {/* ---------------------------------------------------------------- */}
-        <div className="relative flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+        <div className="relative flex flex-col items-start justify-between gap-6 sm:gap-10 lg:flex-row lg:items-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -133,19 +133,19 @@ export default function Footer() {
             <motion.h2
               variants={fadeUp}
               custom={0}
-              className="text-[32px] font-medium leading-[1.15] tracking-tight sm:text-[40px] lg:text-[44px]"
+              className="text-[26px] font-medium leading-[1.15] tracking-tight sm:text-[40px] lg:text-[44px]"
             >
               Send us the lane. We'll send back 
               <br className="hidden sm:block" /> the landed number.
             </motion.h2>
 
-            <motion.div variants={fadeUp} custom={1} className="mt-10">
+            <motion.div variants={fadeUp} custom={1} className="mt-6 sm:mt-10">
               <motion.a
-                href="#get-a-quote"
+                href="quote"
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
-                className="group inline-flex items-center gap-3 bg-[#E1ECDE] px-7 py-4 text-[13px] font-medium uppercase tracking-[0.08em] text-[#161616]"
+                className="group inline-flex items-center gap-3 bg-[#E1ECDE] px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.08em] text-[#161616] sm:px-7 sm:py-4 sm:text-[13px]"
               >
                 <span>Get a lane quote</span>
                 <motion.span
@@ -162,13 +162,13 @@ export default function Footer() {
             </motion.div>
           </motion.div>
 
-          {/* Building illustration */}
+          {/* Building illustration — hidden on mobile, shown from sm: up */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="pointer-events-none w-[220px] shrink-0 self-end sm:w-[200px] lg:w-[200px]"
+            className="pointer-events-none hidden shrink-0 self-end sm:block sm:w-[200px] lg:w-[200px]"
           >
             <Image
               src="/images/city-illustration.png"
@@ -187,7 +187,7 @@ export default function Footer() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="my-16 h-px w-full origin-left bg-white/25"
+          className="my-10 h-px w-full origin-left bg-white/25 sm:my-16"
         />
 
         {/* ---------------------------------------------------------------- */}
@@ -198,25 +198,25 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={columnStagger}
-          className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8"
+          className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-8"
         >
           {/* Brand column */}
-          <motion.div variants={fadeUp} className="max-w-xs">
+          <motion.div variants={fadeUp} className="col-span-2 max-w-xs sm:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2">
               <Image
                 src="/images/white-logo.png"
                 alt="KTR Freight"
                 width={172}
                 height={60}
-                className="h-10 w-auto"
+                className="h-9 w-auto sm:h-10"
               />
             </Link>
 
-            <p className="mt-6 text-[15px] leading-relaxed text-white/85">
+            <p className="mt-5 text-[14px] leading-relaxed text-white/85 sm:mt-6 sm:text-[15px]">
               Asia–US 4PL: drayage, OTR, customs, DDP and company-operated US warehousing on one contract.
             </p>
 
-            <div className="mt-8 flex items-center gap-5">
+            <div className="mt-6 flex items-center gap-5 sm:mt-8">
               {[
                 { icon: <XIcon />, label: "X", href: "#" },
                 { icon: <LinkedInIcon />, label: "LinkedIn", href: "#" },
@@ -241,7 +241,7 @@ export default function Footer() {
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-white/55">
               Services
             </p>
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-5 space-y-3 sm:mt-6 sm:space-y-4">
               {servicesLinks.map((link) => (
                 <li key={link.label}>
                   <FooterLink href={link.href}>{link.label}</FooterLink>
@@ -255,7 +255,7 @@ export default function Footer() {
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-white/55">
               Company
             </p>
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-5 space-y-3 sm:mt-6 sm:space-y-4">
               {companyLinks.map((link) => (
                 <li key={link.label}>
                   <FooterLink href={link.href}>{link.label}</FooterLink>
@@ -265,17 +265,17 @@ export default function Footer() {
           </motion.div>
 
           {/* Contact column */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="col-span-2 sm:col-span-1">
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-white/55">
               Contact info
             </p>
-            <div className="mt-6 space-y-6">
+            <div className="mt-5 space-y-5 sm:mt-6 sm:space-y-6">
               {offices.map((office) => (
                 <div key={office.title}>
-                  <p className="text-[15px] font-medium text-white">
+                  <p className="text-[14px] font-medium text-white sm:text-[15px]">
                     {office.title}
                   </p>
-                  <p className="mt-2 text-[14px] leading-relaxed text-white/70">
+                  <p className="mt-2 text-[13px] leading-relaxed text-white/70 sm:text-[14px]">
                     {office.address}
                   </p>
                 </div>

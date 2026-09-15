@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Plus, Minus, Headphones } from "lucide-react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export interface FaqItem {
     question: string;
@@ -20,7 +20,6 @@ export interface FaqSectionProps {
         email: string;
     };
     faqs: FaqItem[];
-    /** Index of the FAQ open by default. Default 0. Pass -1 for none open. */
     defaultOpenIndex?: number;
     className?: string;
 }
@@ -49,9 +48,6 @@ const FaqSection: React.FC<FaqSectionProps> = ({
         setOpenIndex((prev) => (prev === idx ? -1 : idx));
     };
 
-    // Measure the height of the first 4 FAQ rows (incl. gaps) so the
-    // image column matches that height, then sticks while the rest
-    // of the (longer) FAQ list scrolls past with the page.
     const calculateHeight = useCallback(() => {
         if (!rightColRef.current) return;
 
@@ -85,18 +81,34 @@ const FaqSection: React.FC<FaqSectionProps> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [faqs, calculateHeight]);
 
-    // Re-measure whenever an accordion item opens/closes, since that
-    // changes row heights (only matters if it's within the first 4).
     useEffect(() => {
-        calculateHeight();
+        const t = setTimeout(calculateHeight, 260);
+        return () => clearTimeout(t);
     }, [openIndex, calculateHeight]);
 
     const lockedHeight = isLgUp && stickyHeight ? stickyHeight : undefined;
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+            },
+        })),
+    };
+
     return (
         <section className={`w-full bg-[#F2F1EE] py-14 sm:py-16 md:py-20 ${className}`}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+
             <div className="max-w-[1340px] mx-auto px-5 sm:px-6 md:px-10 lg:px-14">
-                {/* Heading row */}
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10 md:mb-14">
                     <motion.h2
                         initial={{ opacity: 0, y: 12 }}
@@ -119,10 +131,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({
                     </motion.p>
                 </div>
 
-                {/* Main panel */}
                 <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-6 lg:items-start">
-                    {/* Left: image + need-help card. Height locked to first 4 FAQ rows,
-                        then sticky so it stays in view while the remaining FAQs scroll past. */}
                     <motion.div
                         variants={fadeUp}
                         initial="hidden"
@@ -150,21 +159,23 @@ const FaqSection: React.FC<FaqSectionProps> = ({
                         )}
                     </motion.div>
 
-                    {/* Right: accordion. Normal document flow — it just grows taller than
-                        the image, so the sticky image stays pinned until this column ends,
-                        then scrolls away with the rest of the page. No internal scrollbar. */}
                     <div
                         ref={rightColRef}
                         className="w-full lg:w-[62%] flex flex-col gap-2 sm:gap-3"
                     >
                         {faqs.map((faq, idx) => {
                             const isOpen = idx === openIndex;
+                            const panelId = `faq-answer-${idx}`;
+                            const buttonId = `faq-question-${idx}`;
 
                             return (
                                 <div key={idx} className="bg-white">
                                     <button
+                                        id={buttonId}
                                         type="button"
                                         onClick={() => toggle(idx)}
+                                        aria-expanded={isOpen}
+                                        aria-controls={panelId}
                                         className="w-full flex items-center justify-between gap-6 px-6 sm:px-8 py-6 sm:py-7 text-left hover:bg-gray-50/60 transition-colors"
                                     >
                                         <span className="text-[14px] sm:text-[16px] md:text-[17px] font-bold uppercase tracking-wide text-gray-900">
@@ -175,21 +186,19 @@ const FaqSection: React.FC<FaqSectionProps> = ({
                                         </span>
                                     </button>
 
-                                    <AnimatePresence initial={false}>
-                                        {isOpen && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.25, ease: "easeInOut" }}
-                                                className="overflow-hidden"
-                                            >
-                                                <p className="px-6 sm:px-8 pb-6 sm:pb-7  text-[13.5px] sm:text-[15px] text-gray-500 leading-relaxed max-w-2xl">
-                                                    {faq.answer}
-                                                </p>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                    <div
+                                        id={panelId}
+                                        role="region"
+                                        aria-labelledby={buttonId}
+                                        aria-hidden={!isOpen}
+                                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                            isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                                        }`}
+                                    >
+                                        <p className="px-6 sm:px-8 pb-6 sm:pb-7 text-[13.5px] sm:text-[15px] text-gray-500 leading-relaxed max-w-2xl">
+                                            {faq.answer}
+                                        </p>
+                                    </div>
                                 </div>
                             );
                         })}

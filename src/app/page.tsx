@@ -4,7 +4,7 @@ import Home from "@/pages/Home";
 export const metadata: Metadata = {
     title: "KTR Freight | 4PL Freight Forwarding — Asia to United States",
     description:
-        "KTR Freight controls the whole lane — factory floor in Asia to energised job site in America. Drayage, OTR trucking, customs, DDP and US warehousing under one 4PL programme.",
+        "Asia–US 4PL freight: drayage, OTR trucking, customs clearance, DDP and company-operated warehouses in New Jersey, Chicago and Los Angeles. One contract, one landed cost.",
 };
 
 export default function Page() {
