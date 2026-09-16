@@ -33,7 +33,7 @@ export default function Quote() {
                             "1013, 1st Floor, Aerocity Corporate Park, Andheri–Shivaji Nagar, Jarimari, Saki Naka, Mumbai 400072",
                     },
                 ]}
-                email="hello@example.io"
+                email="info@ktrfreight.com"
                 phone="(225) 555-0118"
                 formHeading="Start a lane quote"
                 submitLabel="Request a quote"
