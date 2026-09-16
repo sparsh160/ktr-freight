@@ -182,7 +182,7 @@ export default function Home() {
             <TrustedCompanies
                 heading="Trusted companies across industries"
                 logos={COMPANY_LOGOS}
-                columns={5}
+                
             />
             <ProcessSteps
                 headingBold="One lane."
