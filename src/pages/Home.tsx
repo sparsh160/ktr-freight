@@ -85,17 +85,13 @@ const SERVICES: ServiceItem[] = [
 ];
 
 const COMPANY_LOGOS = [
-    { src: "/images/logoipsum-spiral.png", alt: "Logoipsum" },
-    { src: "/images/sisyphus.png", alt: "Sisyphus" },
-    { src: "/images/logoipsum-feather.png", alt: "Logoipsum" },
-    { src: "/images/logoipsum-dots.png", alt: "Logoipsum" },
-    { src: "/images/quotient.png", alt: "Quotient" },
-    // Second row repeats the same 5 logos in a different order, matching the reference
-    { src: "/images/logoipsum-dots.png", alt: "Logoipsum" },
-    { src: "/images/logoipsum-feather.png", alt: "Logoipsum" },
-    { src: "/images/sisyphus.png", alt: "Sisyphus" },
-    { src: "/images/quotient.png", alt: "Quotient" },
-    { src: "/images/logoipsum-spiral.png", alt: "Logoipsum" },
+    { src: "/images/apar.webp", alt: "Apar" },
+    { src: "/images/dawaat.png", alt: "Dawaat" },
+    { src: "/images/karamtara.webp", alt: "Karamtara" },
+    { src: "/images/waaree.avif", alt: "Waaree" },
+    { src: "/images/hartrodt_logo_bluebg.png", alt: "Hartrodt" },
+
+    
 ];
 
 const FREIGHT_STEPS: ProcessStep[] = [
