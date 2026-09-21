@@ -32,9 +32,13 @@ export default function Quote() {
                         address:
                             "1013, 1st Floor, Aerocity Corporate Park, Andheri–Shivaji Nagar, Jarimari, Saki Naka, Mumbai 400072",
                     },
+                    {
+                        city: "USA",
+                        address: "Suite#304 1560 Wall St, Naperville, IL 60563",
+                    },
                 ]}
                 email="info@ktrfreight.com"
-                phone="(225) 555-0118"
+                phone="+91 9289773486"
                 formHeading="Start a lane quote"
                 submitLabel="Request a quote"
                 onSubmit={handleQuoteSubmit}

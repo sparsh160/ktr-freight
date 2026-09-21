@@ -33,7 +33,11 @@ const offices = [
   {
     title: "Mumbai",
     address:
-      "1013, 1st Floor, Aerocity Corporate Park, Andheri-Shivaji Nagar, Jarimari, Saki Naka, Mumbai 400072",
+      "1013, 1st Floor, Aerocity Corporate Park, Andheri-Shivaji Nagar, Jarimari, Saki Naka, Mumbai 400072",   
+  },
+  {
+    title: "USA",
+    address: "Suite#304 1560 Wall St, Naperville, IL 60563",
   },
 ];
 
@@ -264,18 +268,19 @@ export default function Footer() {
             </ul>
           </motion.div>
 
+          
           {/* Contact column */}
           <motion.div variants={fadeUp} className="col-span-2 sm:col-span-1">
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-white/55">
               Contact info
             </p>
-            <div className="mt-5 space-y-5 sm:mt-6 sm:space-y-6">
+            <div className="mt-5 space-y-4 sm:mt-6 sm:space-y-5">
               {offices.map((office) => (
                 <div key={office.title}>
-                  <p className="text-[14px] font-medium text-white sm:text-[15px]">
+                  <p className="text-[13px] font-medium text-white sm:text-[14px]">
                     {office.title}
                   </p>
-                  <p className="mt-2 text-[13px] leading-relaxed text-white/70 sm:text-[14px]">
+                  <p className="mt-1.5 text-[12px] leading-snug text-white/70 sm:text-[13px]">
                     {office.address}
                   </p>
                 </div>
